@@ -1,7 +1,7 @@
 <img src="banner.png" width="600">
 
 # Project-Yolov4_Object_detection(Pokercards)
-This project is our first attempt on using Yolov4 and training model on a custom dataset for poker cards reading, and then give game suggestion (Black Jack) base on object detection result. We are aiming at develop object detection skills, using deep learning model (Yolov4), foe future application.
+This project is our first attempt on using Yolov4, model will be trained on a custom dataset for poker cards reading.Then, we will give game suggestion (Black Jack) base on object detection result. We are aiming at develop skills on training adn fine tuning Yolov4 model on object detection, for future application.
 
 ## Table of Contents
 
@@ -17,8 +17,9 @@ This project is our first attempt on using Yolov4 and training model on a custom
 
 ## Project_background_and_aim
   <br>
-
-
+  
+  We aimed at train a Yolov4 model on custom dataset for poker card reading on table, and give strategies suggestions for players in a Black Jack game.<br>
+  
 ## Data_Collection
  <br>
 
