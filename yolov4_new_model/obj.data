@@ -1,0 +1,5 @@
+classes = 52
+train = data/train.txt
+valid = data/test.txt
+names = data/obj.names
+backup = ../gdrive/MyDrive/yolo_colab/backup_new_model
