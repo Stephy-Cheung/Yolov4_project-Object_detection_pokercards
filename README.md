@@ -1,4 +1,4 @@
-<img src="image/banner2.png" width="600">
+<img src="image/banner2.png" width="800">
 
 # Project-Yolov4_Object_detection(Pokercards)
 This project is our first attempt on using Yolov4, model will be trained on a custom dataset for poker cards reading.Then, we will give game suggestion (Black Jack) base on object detection result. We are aiming at develop skills on training and fine tuning Yolov4 model on object detection, for future application.
@@ -27,14 +27,14 @@ This project is our first attempt on using Yolov4, model will be trained on a cu
 ## Base_Model_Construction
   There are a number of object detection models available and mostly are general object detections. <br>
   Comparison of the performance (average precision = AP) of different models available online is as follows,
-  <img src="image/02.png" width="600">
+  <img src="image/02.png" width="800">
   
   For our project, our model will be trained to detect 52 distinct Poker card and the result will be used on the second step for generate game suggestion. <br>
 
   With the ability of high precision, multiple object detection and real-time object detection, Yolov4 would be ideal for our needs to detect multiple poker cards and on table for generate game suggestion. Yolov4 also has a good learning capabilities which we can also apply transfer learning to train the classification model on our custom dataset. <br>
 
 ## Project Approach 
-<img src="image/01.png" width="600">
+<img src="image/01.png" width="800">
 
 ## Data_Collection_&_Preprocessing
  Yolo v4 was trained with 80 classes but nor of them are included poker cards labels. Therefore, the model needs to be trained on custom dataset for our project. <br>
@@ -47,13 +47,13 @@ This project is our first attempt on using Yolov4, model will be trained on a cu
  The video and image below showcases the labeling process and result in details, <br>
 <video>
 
-<img src="image/03.png" width="600">
+<img src="image/03.png" width="800">
 
 ## Image_Augmentation
  Image augmentation was applied to expand the dataset and create variation to the images to improve the ability of the model to generalizei in detection. Rotation, shear, exposure and noise were randomly applied on different image and tripled the size of the dataset (around 1.2K images). <br>
  
  The below image is one of the example of original image and processed image.
-<img src="image/06.png" width="600">
+<img src="image/06.png" width="800">
 
 ## Model_Training
  Two models were trained in this project. <br>
@@ -63,7 +63,7 @@ This project is our first attempt on using Yolov4, model will be trained on a cu
  
  After around 1000 epochs of training, the model can detect close up image of poker cards but not perform well if the background is messy or poker image is rotated and sheared.<br>
  
- <img src="image/04.png" width="600">
+ <img src="image/04.png" width="800">
 
  Therefore, we have two approaches to continue the project. <br>
 
@@ -74,7 +74,7 @@ This project is our first attempt on using Yolov4, model will be trained on a cu
 ## Model_Training_(Model2)
  Model2 was trained with the final data set of around 1.2K images. (Training: 1100 images; Testing: 108 images)<br>
  Image Augmentation applied and we aimed at having a more sensitive and generalized model. <br>
-<img src="image/07.png" width="600">
+<img src="image/07.png" width="800">
 
 ## Result_&_Prediction
  After few more thousands of epoches training, the final mAP(mean average precision) at IOU 0.5 (Intersection over Union) of Model1 and Model2 is as below. <br>
@@ -83,16 +83,16 @@ This project is our first attempt on using Yolov4, model will be trained on a cu
  
  Although Model2 seems slightly underperform compare with Model1, we would like to tested the model with different scenarios to better picture their strength and performance. Focusing on the accuracy of locating the card and the accuracy of card reading. <br>
 
- <img src="image/09.png" width="600">
- <img src="image/10.png" width="600">
+ <img src="image/09.png" width="800">
+ <img src="image/10.png" width="800">
  Both models perform similar in detect sheared Poker images. However, ever Model can detect image closed to the chip, the detection is incorrect.  <br>
- <img src="image/11.png" width="600"> 
- <img src="image/12.png" width="600">
- <img src="image/13.png" width="600">
- <img src="image/14.png" width="600">
+ <img src="image/11.png" width="800"> 
+ <img src="image/12.png" width="800">
+ <img src="image/13.png" width="800">
+ <img src="image/14.png" width="800">
  For close up images, both models perform well in image location and image classification. Minor underperform of Model 2 as it might wrongly detected the inverted 4 of Club as Ace of Club, due to the similarity of the character 4 and A.<br>
- <img src="image/15.png" width="600">
- <img src="image/16.png" width="600">
+ <img src="image/15.png" width="800">
+ <img src="image/16.png" width="800">
  For messy background images, Model2 can detect more target on the image.<br>
 
  #### In conclude, Model1 perform better on clear and well-defined images as the training dataset while Model2 are more generalized for image with different angle and more noise.<br>
@@ -122,20 +122,19 @@ Sometimes, the same card might be detected multiple times if it is shown fully (
 
 The strategy of playing Blackjack is a simple probability problem, which can be resolved easily by simulating all possible outcomes. To increase the speed of the program, we hard-coded the calculation results which the program can refer to, instead of doing the calculation every time.<br>
 
-<img src="image/17,png" width="600">
+<img src="image/17.png" width="800">
 
-<img src="image/18.png" width="600">
-
+<img src="image/18.png" width="800">
+  
 ## Application_on_Streamlit
 In order to allow the model to be applied anywhere and anytime, we used Streamlit to allow image upload, realtime model threshold tuning and output display.
 
 In this example, the program could identify Ace of Heart as the dealer's hand, Jack of Diamond and Ten of Diamond as the player's hand.
 
 Then it suggested the player to 'Stand'.
-<video>
+  
 
-
-
+  
 ## Challenges
 We faced 3 major challenges during the project.
 
